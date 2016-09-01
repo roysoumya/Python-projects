@@ -1,4 +1,9 @@
-#A Simple Stopwatch timer
+'''
+This program demonstrates how to create a Simple Stop-watch Timer and illustrates how to include Keyboard inputs like in our case
+: Enter, to control as well as calculate the time elapsed from the last time Enter was hit and also shows the time elapsed from
+the beginning of the program.
+NOTE : These codes are strictly for educational purposes. Use them sensibly.
+'''
 
 import time
 
@@ -21,6 +26,3 @@ try:
 		last_time = time.time()
 except KeyboardInterrupt:
 	print('\nWork completed.')
-	
-	
-
