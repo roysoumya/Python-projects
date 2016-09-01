@@ -1,28 +1,23 @@
 '''
-This is an implementation of a Genetic Algorithm(GA) in Python whose purpose was to 
-generate a set of weight vectors and damping coefficients that would optimally 
-normalize the data. 
-This code was written as a part of the project "Intensity and Track Prediction 
-for Cyclones in the North Indian Ocean Basin" during my summer internship at
-IIT Kharagpur.
+This is an implementation of a Genetic Algorithm(GA) in Python whose purpose was to generate a set of weight vectors and damping
+coefficients that would optimally normalize the data. This code was written as a part of the project "Intensity and Track
+Prediction for Cyclones in the North Indian Ocean Basin" during my summer internship at IIT Kharagpur.
 Steps :
 1. The data is cleaned by removing certain useless columns.
-2. Every GA must have a fitness function using which each chromosome of the 
-current population is evaluated, and a fitness score is generated, which
-indicates the probability of survival of the chromosome in the next generation.
-   Here eval_func is the fitness function
-3. Normalize function is used to convert(or normalize) the given weight vectors
-(between 0 and 1) and damping coefficients(between 0.1 and 5.0)   
+2. Every GA must have a fitness function using which each chromosome of the current population is evaluated, and a fitness score 
+is generated, which indicates the probability of survival of the chromosome in the next generation.Here eval_func is the 
+fitness function
+3. Normalize function is used to convert(or normalize) the given weight vectors(between 0 and 1) and damping coefficients
+(between 0.1 and 5.0)   
 4. The last part of the program specifies the various parameters of the GA
 
 Packages used :
 1. Pyevolve for the GA
 2. numpy for numpy_array for easier calculation
 3. pandas : for the read_csv function
-4. matplotlib : Not used here, but could be used to plot the evolution of the GA
-plotting the Best, Mean and Median for each generation.
-5. scikit-learn : For the k-means clustering, here k=25, i.e, the no. of states
-in the Markov model.
+4. matplotlib : Not used here, but could be used to plot the evolution of the GA plotting the Best, Mean and Median for each 
+generation.
+5. scikit-learn : For the k-means clustering, here k=25, i.e, the no. of states in the Markov model.
 '''
 from pyevolve import G1DList,GSimpleGA,Consts,Initializators
 from math import exp,sqrt
@@ -55,7 +50,6 @@ mean_vector = range(useful_col_start,col_count)
 sd_vector = range(useful_col_start,col_count)
 min_vector = range(useful_col_start,col_count)
 max_vector = range(useful_col_start,col_count)
-
 
 def Normalize(u,v,x,y):
 	a1 = 1 + exp(-1*v*y)
